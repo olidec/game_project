@@ -59,5 +59,5 @@ while g.running:
     g.game_over()
 
 pygame.quit()
-sys.quit()
+sys.exit()
 
