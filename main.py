@@ -1,3 +1,4 @@
+import enum
 import pygame
 from sprites import *
 from config import *
@@ -10,6 +11,15 @@ class Game:
         self.clock = pygame.time.Clock()
         self.running = True
 
+    def create_tilemap(self):
+        for i, row in enumerate(tilemap):
+            for j, column in enumerate(row):
+                if column == "B":
+                    Block(self,j,i)
+                if column == "P":
+                    Player(self,j,i)
+
+
     def new(self):
         self.playing = True
 
@@ -18,7 +28,10 @@ class Game:
         self.enemies = pygame.sprite.LayeredUpdates()
         self.attacks = pygame.sprite.LayeredUpdates()
 
-        self.player = Player(self,1,2)
+        self.create_tilemap()
+
+
+
 
 
     def events(self):
