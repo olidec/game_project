@@ -8,8 +8,9 @@ red = (255,0,0)
 black = (0,0,0)
 blue = (0,0,255)
 
-block_layer = 1
-player_layer = 2
+ground_layer = 1
+block_layer = 2
+player_layer = 3
 
 player_speed = 3
 
